@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+
+		.product{
+			background-color: lightgreen;
+			border: 1px black solid;
+			margin-top: 5px;
+		}
+
+		.product img{
+			 width: 30px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+	
+		document.write("<h1>Doing something new with objects</h1>");
+		var soap1 ={
+			name: "Silky Soap",
+			image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVapRu1YeOo8-K9XPXyljrd3sdoTvX6OCDghmrPWaHxntAet0lSQ",
+			price: 25
+		}; 
+		var soap2 ={
+			name: "Dove",
+			image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7riuxdpccWzjqPUo-8tvgbbtgMPLTn7-9TEPvj9iHQDc9QXpL",
+			price: 5
+		}; 
+		var soapx ={
+			name: "Christmas Edition Soap No1",
+			image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6vJ52A0cbAdjDswdYjf_v64yzKWeFyPCuCL676gKVmWkvkG5a",
+			price: 5
+		}; 
+		//document.write(soap1.name + "<br>");
+		//document.write(soap2.name + "<br>");
+		//document.write(soapx.name + "<br>");
+
+		var soaps = [
+		     soap1, 
+		     soap2, 
+		     soapx
+
+		];
+
+		for (var i = 0; i<soaps.length; i++) {
+			document.write("<div class=\"product\">");
+			document.write(soaps[i].name+"<br>");
+
+			document.write("<b>eur"+soaps[i].price+"EURO"+"</b>"+"<br>");
+
+			document.write("<img src=\"" +soaps[i].image + "\">"+"<br>");
+
+			//<button onclick="...">Buy it</button>
+			document.write('<button onclick="buyIt('+i+')">Buy it</button>');
+			document.write("</div>");
+		}
+
+		function buyIt(i){
+			console.log("wanna buy it" + soaps[i].name);//if I change this with "soaps[i].price", will show the price in console
+		}
+	</script>
+</body>
+</html>
